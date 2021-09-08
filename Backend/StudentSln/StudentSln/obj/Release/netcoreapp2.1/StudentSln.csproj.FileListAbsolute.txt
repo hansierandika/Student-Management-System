@@ -1,0 +1,14 @@
+E:\New folder\StudentSln\StudentSln\bin\Release\netcoreapp2.1\StudentSln.deps.json
+E:\New folder\StudentSln\StudentSln\bin\Release\netcoreapp2.1\StudentSln.runtimeconfig.json
+E:\New folder\StudentSln\StudentSln\bin\Release\netcoreapp2.1\StudentSln.runtimeconfig.dev.json
+E:\New folder\StudentSln\StudentSln\bin\Release\netcoreapp2.1\StudentSln.dll
+E:\New folder\StudentSln\StudentSln\bin\Release\netcoreapp2.1\StudentSln.pdb
+E:\New folder\StudentSln\StudentSln\obj\Release\netcoreapp2.1\StudentSln.csprojAssemblyReference.cache
+E:\New folder\StudentSln\StudentSln\obj\Release\netcoreapp2.1\StudentSln.csproj.CoreCompileInputs.cache
+E:\New folder\StudentSln\StudentSln\obj\Release\netcoreapp2.1\StudentSln.RazorAssemblyInfo.cache
+E:\New folder\StudentSln\StudentSln\obj\Release\netcoreapp2.1\StudentSln.RazorAssemblyInfo.cs
+E:\New folder\StudentSln\StudentSln\obj\Release\netcoreapp2.1\StudentSln.AssemblyInfoInputs.cache
+E:\New folder\StudentSln\StudentSln\obj\Release\netcoreapp2.1\StudentSln.AssemblyInfo.cs
+E:\New folder\StudentSln\StudentSln\obj\Release\netcoreapp2.1\StudentSln.RazorTargetAssemblyInfo.cache
+E:\New folder\StudentSln\StudentSln\obj\Release\netcoreapp2.1\StudentSln.dll
+E:\New folder\StudentSln\StudentSln\obj\Release\netcoreapp2.1\StudentSln.pdb

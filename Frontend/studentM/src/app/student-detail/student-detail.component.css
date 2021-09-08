@@ -1,0 +1,21 @@
+.row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 50%;
+  }
+
+  #card-title{
+    text-align: center;
+  }
+
+  #top-table{
+    text-align: center;
+    /* align-items: center; */
+    width: 50%;
+    color: rgb(11, 6, 37);
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  

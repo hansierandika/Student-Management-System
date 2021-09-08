@@ -1,0 +1,55 @@
+<div class="card bg-light mb-3" id="content-card">
+    <button [routerLink]="['/all-students']" id="top-button" class="btn btn-success btn-sm">Details</button>
+    <div class="card-header" id="card-header">Student Marks</div>
+    <div class="card-body">
+        <!-- <h4 class="card-title" id="card-title">Student Information</h4> -->
+
+        <!-- <h4 class="card-title" id="card-title">Student Marks</h4> -->
+        <table class="table table-hover table-light" id="top-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Year</th>
+                    <th>Maths</th>
+                    <th>English</th>
+                    <th>Sinhala</th>
+                    <th>Average</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr [routerLink]="['/student-detail', st.Id]" *ngFor="let st of students">
+                    <td>{{st.Id}}</td>
+                    <td>{{st.Date}}</td>
+                    <td>{{st.Maths}}</td>
+                    <td>{{st.English}}</td>
+                    <td>{{st.Sinhala}}</td>
+                    <td>{{st.Average}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+<!-- 
+<div>
+    <button [routerLink]="['/all-students']" class="btn btn-success btn-sm">Details</button>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Year</th>
+            <th>Maths</th>
+            <th>English</th>
+            <th>Sinhala</th>
+            <th>Average</th>
+        </tr>
+        <tr [routerLink]="['/student-detail', st.Id]" *ngFor="let st of students">
+                <td>{{st.Id}}</td>
+                <td>{{st.Date}}</td>
+                <td>{{st.Maths}}</td>
+                <td>{{st.English}}</td>
+                <td>{{st.Sinhala}}</td>
+                <td>{{st.Average}}</td>
+        </tr>
+    </table>
+</div> -->
+
