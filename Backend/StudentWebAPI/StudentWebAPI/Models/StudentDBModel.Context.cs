@@ -35,6 +35,6 @@ namespace StudentWebAPI.Models
         //}
 
         public virtual DbSet<Mark> Marks { get; set; }
-        public virtual DbSet<StudentDetail> StudentDetails { get; set; }
+        public virtual DbSet<UserDetail> UserDetails { get; set; }
     }
 }

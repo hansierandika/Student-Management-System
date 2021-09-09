@@ -12,10 +12,10 @@ namespace StudentWebAPI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class StudentDetail
+    public partial class UserDetail
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public StudentDetail()
+        public UserDetail()
         {
             this.Marks = new HashSet<Mark>();
         }

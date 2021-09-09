@@ -16,7 +16,7 @@
           <Property Name="English" Type="int" />
           <Property Name="SId" Type="int" />
         </EntityType>
-        <EntityType Name="StudentDetail">
+        <EntityType Name="UserDetail">
           <Key>
             <PropertyRef Name="SId" />
           </Key>
@@ -37,10 +37,10 @@ warning 6013: The table/view 'StudentDB.dbo.StudentMark_View' does not have a pr
           <Property Name="English" Type="int" />
         </EntityType>-->
         <Association Name="FK__Mark__SId__5165187F">
-          <End Role="StudentDetail" Type="Self.StudentDetail" Multiplicity="0..1" />
+          <End Role="UserDetail" Type="Self.UserDetail" Multiplicity="0..1" />
           <End Role="Mark" Type="Self.Mark" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="StudentDetail">
+            <Principal Role="UserDetail">
               <PropertyRef Name="SId" />
             </Principal>
             <Dependent Role="Mark">
@@ -50,9 +50,9 @@ warning 6013: The table/view 'StudentDB.dbo.StudentMark_View' does not have a pr
         </Association>
         <EntityContainer Name="StudentDBModelStoreContainer">
           <EntitySet Name="Mark" EntityType="Self.Mark" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="StudentDetail" EntityType="Self.StudentDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserDetail" EntityType="Self.UserDetail" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Mark__SId__5165187F" Association="Self.FK__Mark__SId__5165187F">
-            <End Role="StudentDetail" EntitySet="StudentDetail" />
+            <End Role="UserDetail" EntitySet="UserDetail" />
             <End Role="Mark" EntitySet="Mark" />
           </AssociationSet>
         </EntityContainer>
@@ -71,9 +71,9 @@ warning 6013: The table/view 'StudentDB.dbo.StudentMark_View' does not have a pr
           <Property Name="Maths" Type="Int32" />
           <Property Name="English" Type="Int32" />
           <Property Name="SId" Type="Int32" />
-          <NavigationProperty Name="StudentDetail" Relationship="Self.FK__Mark__SId__5165187F" FromRole="Mark" ToRole="StudentDetail" />
+          <NavigationProperty Name="UserDetail" Relationship="Self.FK__Mark__SId__5165187F" FromRole="Mark" ToRole="UserDetail" />
         </EntityType>
-        <EntityType Name="StudentDetail">
+        <EntityType Name="UserDetail">
           <Key>
             <PropertyRef Name="SId" />
           </Key>
@@ -83,13 +83,13 @@ warning 6013: The table/view 'StudentDB.dbo.StudentMark_View' does not have a pr
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ContactNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Age" Type="Int32" />
-          <NavigationProperty Name="Marks" Relationship="Self.FK__Mark__SId__5165187F" FromRole="StudentDetail" ToRole="Mark" />
+          <NavigationProperty Name="Marks" Relationship="Self.FK__Mark__SId__5165187F" FromRole="UserDetail" ToRole="Mark" />
         </EntityType>
         <Association Name="FK__Mark__SId__5165187F">
-          <End Role="StudentDetail" Type="Self.StudentDetail" Multiplicity="0..1" />
+          <End Role="UserDetail" Type="Self.UserDetail" Multiplicity="0..1" />
           <End Role="Mark" Type="Self.Mark" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="StudentDetail">
+            <Principal Role="UserDetail">
               <PropertyRef Name="SId" />
             </Principal>
             <Dependent Role="Mark">
@@ -99,9 +99,9 @@ warning 6013: The table/view 'StudentDB.dbo.StudentMark_View' does not have a pr
         </Association>
         <EntityContainer Name="StudentDBEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Marks" EntityType="Self.Mark" />
-          <EntitySet Name="StudentDetails" EntityType="Self.StudentDetail" />
+          <EntitySet Name="UserDetails" EntityType="Self.UserDetail" />
           <AssociationSet Name="FK__Mark__SId__5165187F" Association="Self.FK__Mark__SId__5165187F">
-            <End Role="StudentDetail" EntitySet="StudentDetails" />
+            <End Role="UserDetail" EntitySet="UserDetails" />
             <End Role="Mark" EntitySet="Marks" />
           </AssociationSet>
         </EntityContainer>
@@ -123,9 +123,9 @@ warning 6013: The table/view 'StudentDB.dbo.StudentMark_View' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="StudentDetails">
-            <EntityTypeMapping TypeName="StudentDBModel.StudentDetail">
-              <MappingFragment StoreEntitySet="StudentDetail">
+          <EntitySetMapping Name="UserDetails">
+            <EntityTypeMapping TypeName="StudentDBModel.UserDetail">
+              <MappingFragment StoreEntitySet="UserDetail">
                 <ScalarProperty Name="SId" ColumnName="SId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />

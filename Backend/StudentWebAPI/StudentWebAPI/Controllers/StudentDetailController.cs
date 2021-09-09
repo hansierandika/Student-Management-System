@@ -41,7 +41,7 @@ namespace StudentWebAPI.Controllers
         [ActionName("GetAllStudent")]
         public HttpResponseMessage GetAllStudent()
         {
-            var table = db.StudentDetails.ToArray(); 
+            var table = db.UserDetails.ToArray(); 
 
             return Request.CreateResponse(HttpStatusCode.OK, table);
         }
@@ -49,7 +49,7 @@ namespace StudentWebAPI.Controllers
         [HttpGet]
         public HttpResponseMessage Get(string id)
         {
-            var student = db.StudentDetails.Where(data => data.Id == id).First();
+            var student = db.UserDetails.Where(data => data.Id == id).First();
 
             return Request.CreateResponse(HttpStatusCode.OK, student);
             ////var table = db.StudentDetails.Where(data => data.Id == id);
@@ -97,7 +97,7 @@ namespace StudentWebAPI.Controllers
         [HttpGet]
         public HttpResponseMessage GetMark(string id)
         {
-            var student = db.StudentDetails.Where(data => data.Id == id).First();
+            var student = db.UserDetails.Where(data => data.Id == id).First();
 
             int sid = student.SId;
 

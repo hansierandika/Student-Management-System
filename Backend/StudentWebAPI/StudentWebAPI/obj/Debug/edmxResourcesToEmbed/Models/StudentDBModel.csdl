@@ -10,9 +10,9 @@
     <Property Name="Maths" Type="Int32" />
     <Property Name="English" Type="Int32" />
     <Property Name="SId" Type="Int32" />
-    <NavigationProperty Name="StudentDetail" Relationship="Self.FK__Mark__SId__5165187F" FromRole="Mark" ToRole="StudentDetail" />
+    <NavigationProperty Name="UserDetail" Relationship="Self.FK__Mark__SId__5165187F" FromRole="Mark" ToRole="UserDetail" />
   </EntityType>
-  <EntityType Name="StudentDetail">
+  <EntityType Name="UserDetail">
     <Key>
       <PropertyRef Name="SId" />
     </Key>
@@ -22,13 +22,13 @@
     <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ContactNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="Age" Type="Int32" />
-    <NavigationProperty Name="Marks" Relationship="Self.FK__Mark__SId__5165187F" FromRole="StudentDetail" ToRole="Mark" />
+    <NavigationProperty Name="Marks" Relationship="Self.FK__Mark__SId__5165187F" FromRole="UserDetail" ToRole="Mark" />
   </EntityType>
   <Association Name="FK__Mark__SId__5165187F">
-    <End Role="StudentDetail" Type="Self.StudentDetail" Multiplicity="0..1" />
+    <End Role="UserDetail" Type="Self.UserDetail" Multiplicity="0..1" />
     <End Role="Mark" Type="Self.Mark" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="StudentDetail">
+      <Principal Role="UserDetail">
         <PropertyRef Name="SId" />
       </Principal>
       <Dependent Role="Mark">
@@ -38,9 +38,9 @@
   </Association>
   <EntityContainer Name="StudentDBEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Marks" EntityType="Self.Mark" />
-    <EntitySet Name="StudentDetails" EntityType="Self.StudentDetail" />
+    <EntitySet Name="UserDetails" EntityType="Self.UserDetail" />
     <AssociationSet Name="FK__Mark__SId__5165187F" Association="Self.FK__Mark__SId__5165187F">
-      <End Role="StudentDetail" EntitySet="StudentDetails" />
+      <End Role="UserDetail" EntitySet="UserDetails" />
       <End Role="Mark" EntitySet="Marks" />
     </AssociationSet>
   </EntityContainer>

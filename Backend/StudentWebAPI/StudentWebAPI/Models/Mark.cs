@@ -21,6 +21,6 @@ namespace StudentWebAPI.Models
         public Nullable<int> English { get; set; }
         public Nullable<int> SId { get; set; }
     
-        public virtual StudentDetail StudentDetail { get; set; }
+        public virtual UserDetail UserDetail { get; set; }
     }
 }
