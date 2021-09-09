@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StudentDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Mark">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sinhala" Type="Int32" />
+    <Property Name="Maths" Type="Int32" />
+    <Property Name="English" Type="Int32" />
+    <Property Name="SId" Type="Int32" />
+    <NavigationProperty Name="StudentDetail" Relationship="Self.FK__Mark__SId__5165187F" FromRole="Mark" ToRole="StudentDetail" />
+  </EntityType>
+  <EntityType Name="StudentDetail">
+    <Key>
+      <PropertyRef Name="SId" />
+    </Key>
+    <Property Name="SId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ContactNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Age" Type="Int32" />
+    <NavigationProperty Name="Marks" Relationship="Self.FK__Mark__SId__5165187F" FromRole="StudentDetail" ToRole="Mark" />
+  </EntityType>
+  <Association Name="FK__Mark__SId__5165187F">
+    <End Role="StudentDetail" Type="Self.StudentDetail" Multiplicity="0..1" />
+    <End Role="Mark" Type="Self.Mark" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StudentDetail">
+        <PropertyRef Name="SId" />
+      </Principal>
+      <Dependent Role="Mark">
+        <PropertyRef Name="SId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="StudentDBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Marks" EntityType="Self.Mark" />
+    <EntitySet Name="StudentDetails" EntityType="Self.StudentDetail" />
+    <AssociationSet Name="FK__Mark__SId__5165187F" Association="Self.FK__Mark__SId__5165187F">
+      <End Role="StudentDetail" EntitySet="StudentDetails" />
+      <End Role="Mark" EntitySet="Marks" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
