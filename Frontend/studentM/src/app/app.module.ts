@@ -1,5 +1,7 @@
+import { UserService } from './user.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -9,22 +11,28 @@ import { StudentsMarksComponent } from './students-marks/students-marks.componen
 import { AllStudentsComponent } from './all-students/all-students.component';
 import { DetailServiceService } from './detail-service.service';
 import { ChartsModule } from 'ng2-charts';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentDetailComponent,
     StudentsMarksComponent,
-    AllStudentsComponent
+    AllStudentsComponent,
+    SignUpComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ChartsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
-    DetailServiceService
+    DetailServiceService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

@@ -176,3 +176,13 @@ C:\Projects\StudentManagementSystem\Backend\StudentWebAPI\StudentWebAPI\obj\Debu
 C:\Projects\StudentManagementSystem\Backend\StudentWebAPI\StudentWebAPI\obj\Debug\StudentWebAPI.csproj.CopyComplete
 C:\Projects\StudentManagementSystem\Backend\StudentWebAPI\StudentWebAPI\obj\Debug\StudentWebAPI.dll
 C:\Projects\StudentManagementSystem\Backend\StudentWebAPI\StudentWebAPI\obj\Debug\StudentWebAPI.pdb
+C:\Projects\StudentManagementSystem\Backend\StudentWebAPI\StudentWebAPI\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Projects\StudentManagementSystem\Backend\StudentWebAPI\StudentWebAPI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Projects\StudentManagementSystem\Backend\StudentWebAPI\StudentWebAPI\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Projects\StudentManagementSystem\Backend\StudentWebAPI\StudentWebAPI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Projects\StudentManagementSystem\Backend\StudentWebAPI\StudentWebAPI\obj\Debug\StudentWebAPI.Migrations.InitialDB.resources
+C:\Projects\StudentManagementSystem\Backend\StudentWebAPI\StudentWebAPI\obj\Debug\StudentWebAPI.csproj.GenerateResource.cache
+C:\Projects\StudentManagementSystem\Backend\StudentWebAPI\StudentWebAPI\obj\Debug\StudentWebAPI.Migrations.InitialDB1.resources
+C:\Projects\StudentManagementSystem\Backend\StudentWebAPI\StudentWebAPI\obj\Debug\StudentWebAPI.Migrations.ChangedDefaultTableNames.resources
+C:\Projects\StudentManagementSystem\Backend\StudentWebAPI\StudentWebAPI\obj\Debug\StudentWebAPI.Migrations.ChangedDefaultColumnNames.resources
+C:\Projects\StudentManagementSystem\Backend\StudentWebAPI\StudentWebAPI\obj\Debug\StudentWebAPI.Migrations.ChangedDefaultColumnNames1.resources
