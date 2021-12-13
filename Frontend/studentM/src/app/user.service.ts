@@ -18,8 +18,13 @@ export class UserService {
   ) { }
 
   registerUser(user: Student): Observable<Student> {
-console.log("bhvb")
     return this.http.post<Student>(this.studentUrl + '/User/Register', user);
 
+  }
+
+  userAuthentication(userName: string, password : string){
+    var data = "username=" + userName + "&password=" + password + "&grant_type=password";
+    var reqHeader = new HttpHeaders({ 'Content-Type': 'application/x-www-urlencoded','No-Auth':'True' });
+    return this.http.post(this.studentUrl + '/token', data, { headers: reqHeader });
   }
 }

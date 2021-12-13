@@ -1,10 +1,19 @@
 <div class="container" id="container">
-    <div class="login-form">
-        <h1>Sign In</h1>
-        <div class="form-group "> <input type="text" class="form-control" placeholder="Username " id="UserName"> <i class="mdi mdi-account"></i> </div>
-        <div class="form-group log-status"> <input type="password" class="form-control" placeholder="Password" id="Passwod"> <i class="mdi mdi-lock"></i> </div> <span class="alert">Invalid Credentials</span> <a class="link" href="#">Lost your password?</a> <button type="button" class="log-btn"><i class="mdi mdi-account"></i> Log in</button>
+  <div class="login-form">
+    <h1>Sign In</h1>
+    <div class="form-group"> <input type="text" class="form-control"
+        placeholder="UserName" id="UserName" [(ngModel)]="userName"> <i
+        class="mdi
+        mdi-account"></i>
     </div>
-    <!-- <div class="form-group">
+    <div class="form-group log-status"> <input type="password"
+        class="form-control" placeholder="Password" id="Passwod"
+        [(ngModel)]="password"> <i class="mdi mdi-lock"></i> </div> <span
+      class="alert">Invalid Credentials</span> <a class="link" href="#">Lost
+      your password?</a> <button type="button" class="log-btn" (click)="onSubmit()"><i class="mdi
+        mdi-account"></i> Log in</button>
+  </div>
+  <!-- <div class="form-group">
         <fieldset disabled="">
           <label class="form-label" for="disabledInput">Disabled input</label>
           <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">

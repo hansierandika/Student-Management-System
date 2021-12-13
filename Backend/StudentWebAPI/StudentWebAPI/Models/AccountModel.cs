@@ -13,6 +13,8 @@ namespace StudentWebAPI.Models
 
         public string FirstName { get; set; }
 
+        public string UserName { get; set; }
+
         public string LastName { get; set; }
 
         public string Email { get; set; }
@@ -24,5 +26,7 @@ namespace StudentWebAPI.Models
         public int Grade { get; set; }
 
         public string Password { get; set; }
+
+        public string LoggedOn { get; set; }
     }
 }

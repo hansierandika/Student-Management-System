@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Security.Claims;
 using System.Web.Http;
 
 namespace StudentWebAPI.Controllers
@@ -14,6 +15,7 @@ namespace StudentWebAPI.Controllers
     {
         [Route("api/User/Register")]
         [HttpPost]
+        [AllowAnonymous]
         public IdentityResult Register(AccountModel model)
         {
             var userStore = new UserStore<ApplicationUser>(new ApplicationDbContext());
@@ -24,7 +26,7 @@ namespace StudentWebAPI.Controllers
             //{
 
             //}
-            user.UserName = model.FirstName + "_" + model.LastName;
+            user.UserName = model.SId;
             user.Email = model.Email;
             user.SId = model.SId;
             user.FirstName = model.FirstName;
@@ -37,6 +39,23 @@ namespace StudentWebAPI.Controllers
             IdentityResult result = manager.Create(user, model.Password);
 
             return result;
+        }
+
+        [HttpGet]
+        [Route("api/GetUserClaims")]
+        public AccountModel GetUserClaims()
+        {
+            var identityClaims = (ClaimsIdentity)User.Identity;
+            IEnumerable<Claim> claims = identityClaims.Claims;
+            AccountModel model = new AccountModel()
+            {
+                UserName = identityClaims.FindFirst("UserName").Value,
+                Email = identityClaims.FindFirst("Email").Value,
+                FirstName = identityClaims.FindFirst("FirstName").Value,
+                LastName = identityClaims.FindFirst("LastName").Value,
+                LoggedOn = identityClaims.FindFirst("LoggedOn").Value
+            };
+            return model;
         }
 
     }
