@@ -12,7 +12,7 @@ import { student } from './models/studentData';
 })
 export class DetailServiceService {
   list: Student[];
-  private studentUrl = 'http://localhost:55937/api';
+  private studentUrl = 'http://localhost:60988/api';
   constructor(
     private http: HttpClient
   ) { }
@@ -43,12 +43,12 @@ export class DetailServiceService {
   }
 
   getStudents(): Observable<Student[]> {
-    return this.http.get<Student[]>(this.studentUrl+'/StudentDetail'+'/GetAllStudent');
+    return this.http.get<Student[]>(this.studentUrl+'/StudentDetails');
   }
 
   getDetail(sId: string): Observable<Student>{
-    console.log(this.studentUrl+'/StudentDetail/'+sId)
-    return this.http.get<Student>(this.studentUrl+'/StudentDetail'+'/Get/'+sId);
+    // console.log(this.studentUrl+'/StudentDetail/'+sId)
+    return this.http.get<Student>(this.studentUrl+'/StudentDetail'+sId);
 
   }
 

@@ -1,6 +1,7 @@
 export class Student{
     public Id: number;
-    public SId: string;
+    public StudentId: string;
+    public RegistrationNo: string;
     public UserName: string;
     public FirstName: string;
     public LastName: string;

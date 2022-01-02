@@ -13,6 +13,7 @@ import { DetailServiceService } from './detail-service.service';
 import { ChartsModule } from 'ng2-charts';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
     StudentsMarksComponent,
     AllStudentsComponent,
     SignUpComponent,
-    SignInComponent
+    SignInComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

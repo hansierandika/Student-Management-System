@@ -17,7 +17,7 @@
             <tbody>
                 <tr [routerLink]="['/student-detail', st.Id]" *ngFor="let st of
                     students">
-                    <td>{{st.Id}}</td>
+                    <td>{{st.RegistrationNo}}</td>
                     <td>{{st.FirstName + ' ' + st.LastName}}</td>
                     <td>{{st.Age}}</td>
                     <td>{{st.ContactNo}}</td>
