@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DetailServiceService } from '../detail-service.service';
 import { Student } from '../models/student';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-all-students',
@@ -10,14 +10,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AllStudentsComponent implements OnInit {
 
-  students : Student[];
+  students: Student[];
   da:any;
 
   constructor(private route: ActivatedRoute, 
+    private router:Router,
     private detailService: DetailServiceService) { }
 
   ngOnInit(): void {
-    this.detailService.getStudents().subscribe(students => this.students = students);
+    this.detailService.getStudents().subscribe((students: Student[]) => this.students = students);
     this.getDetail()
   }
 

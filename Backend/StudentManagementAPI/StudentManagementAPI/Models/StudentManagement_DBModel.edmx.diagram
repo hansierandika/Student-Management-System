@@ -12,6 +12,7 @@
         <AssociationConnector Association="StudentManagement_DBModel.FK__Mark__StudentId__2F10007B" ManuallyRouted="false" />
         <AssociationConnector Association="StudentManagement_DBModel.FK__Mark__SubjectId__2E1BDC42" ManuallyRouted="false" />
         <AssociationConnector Association="StudentManagement_DBModel.FK__Subject__Teacher__267ABA7A" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="StudentManagement_DBModel.MarkView" Width="1.5" PointX="5.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

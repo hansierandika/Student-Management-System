@@ -1,0 +1,12 @@
+.add-student{
+    float: right;
+    color: azure;
+    background: darkblue;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.add-student:hover {
+    background-color: azure; 
+    color: darkblue;
+  }

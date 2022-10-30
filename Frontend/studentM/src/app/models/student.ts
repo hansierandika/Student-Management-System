@@ -1,6 +1,6 @@
 export class Student{
     public Id: number;
-    public StudentId: string;
+    //public StudentId: string;
     public RegistrationNo: string;
     public UserName: string;
     public FirstName: string;

@@ -20,6 +20,7 @@ export class StudentDetailComponent implements OnInit {
   public student : Student;
   x=56;
   public mark : Mark[];
+  message:string=""
   public barChartOptions: ChartOptions = {
     responsive: true,
   };
@@ -43,9 +44,10 @@ export class StudentDetailComponent implements OnInit {
   }
 
   getDetail(){
+    console.log(this.id)
     this.detailService.getDetail(this.id).subscribe(student => this.student = student);
-    this.detailService.getMark(this.id).subscribe(mark => this.mark = mark);
-    console.warn(this.mark)
+    // this.detailService.getMark(this.id).subscribe(mark => this.mark = mark);
+    // console.warn(this.mark)
     // this.detailService.getDetail(this.id).subscribe(student => this.sdata = student);
     // console.log(this.sdata.maths)
     // //this.sdata= this.data;
@@ -64,4 +66,14 @@ export class StudentDetailComponent implements OnInit {
   // }
 
   public barChartData: ChartDataSets[] ;
+
+  conertToCSV(studentDetails : Student){
+    this.detailService.conertToCSV(studentDetails).subscribe(
+      (message) => (this.message = message,
+        alert(this.message)
+        )
+      
+
+    );
+  }
 }

@@ -39,16 +39,19 @@ export class DetailServiceService {
 
   // }
   getStudentsForMArks(): Observable<StudentMarkView[]> {
-    return this.http.get<StudentMarkView[]>(this.studentUrl+'/StudentDetail'+'/Get');
+    return this.http.get<StudentMarkView[]>(this.studentUrl+'/Marks');
   }
 
   getStudents(): Observable<Student[]> {
-    return this.http.get<Student[]>(this.studentUrl+'/StudentDetails');
+    return this.http.get<Student[]>(this.studentUrl+'/StudentDetails/getStudents');
   }
 
   getDetail(sId: string): Observable<Student>{
     // console.log(this.studentUrl+'/StudentDetail/'+sId)
-    return this.http.get<Student>(this.studentUrl+'/StudentDetail'+sId);
+    console.log('ok')
+    console.log(sId)
+
+    return this.http.get<Student>(this.studentUrl+'/StudentDetails/GetStudentDetail/'+sId);
 
   }
 
@@ -57,4 +60,11 @@ export class DetailServiceService {
     return this.http.get<Mark[]>(this.studentUrl+'/StudentDetail'+'/GetMark/'+sId);
 
   }
+
+  conertToCSV(student: Student): Observable<string> {
+    return this.http.post<string>(this.studentUrl + '/StudentDetails/ConertToCSV', student);
+
+  }
+
+
 }

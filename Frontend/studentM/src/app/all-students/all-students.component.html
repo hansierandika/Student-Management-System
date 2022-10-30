@@ -1,6 +1,11 @@
 <div class="card bg-light mb-3" id="content-card">
-    <button class="btn btn-success btn-sm" id="top-button" [routerLink]="['/students-marks']">Marks</button>
+    <!-- <button class="btn btn-success btn-sm" id="top-button" [routerLink]="['/students-marks']">Marks</button> -->
+
+    <div>
+        <a class="add-student" [routerLink]="['/students-add']">Add new student</a>
+    </div>
     <div class="card-header" id="card-header">Student Details</div>
+
     <div class="card-body">
         <!-- <h4 class="card-title" id="card-title">Student Information</h4> -->
 
@@ -15,7 +20,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr [routerLink]="['/student-detail', st.Id]" *ngFor="let st of
+                <tr [routerLink]="['/student-detail', st.RegistrationNo]" *ngFor="let st of
                     students">
                     <td>{{st.RegistrationNo}}</td>
                     <td>{{st.FirstName + ' ' + st.LastName}}</td>

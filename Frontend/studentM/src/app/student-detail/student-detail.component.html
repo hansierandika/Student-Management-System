@@ -10,7 +10,7 @@
                 </tr>
                 <tr>
                     <th>ID</th>
-                    <td>{{ student?.Id }}</td>
+                    <td>{{ student?.RegistrationNo }}</td>
                 </tr>
                 <tr>
                     <th>Age</th>
@@ -22,25 +22,33 @@
                 </tr>
             </table>
 
+            <button (click)="conertToCSV(student)">Convert to csv</button>
         <h4 class="card-title" id="card-title">Student Marks</h4>
-        <table class="table table-hover table-light" id="top-table">
-            <thead>
-                <tr>
-                    <th>Sinhala</th>
-                    <th>English</th>
-                    <th>Maths</th>
-                    <th>Year</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let data of mark">
-                    <td>{{ data.Sinhala }}</td>
-                    <td>{{ data.English }}</td>
-                    <td>{{ data.Maths }}</td>
-                    <td>{{ data.Date }}</td>
-                </tr>
-            </tbody>
-        </table>
+
+        <div *ngIf="mark">
+            <table class="table table-hover table-light" id="top-table">
+                <thead>
+                    <tr>
+                        <th>Sinhala</th>
+                        <th>English</th>
+                        <th>Maths</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of mark">
+                        <td>{{ data.Sinhala }}</td>
+                        <td>{{ data.English }}</td>
+                        <td>{{ data.Maths }}</td>
+                        <td>{{ data.Date }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div *ngIf="!mark">
+            <p style="text-align: center;">There is no mark yet...</p>
+        </div>
+        
 
     </div>
 </div>

@@ -1,6 +1,7 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { UserService } from './user.service';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+
 import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -14,6 +15,8 @@ import { ChartsModule } from 'ng2-charts';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { HeaderComponent } from './header/header.component';
+import { AddEditStudentComponent } from './add-edit-student/add-edit-student.component';
+
 
 @NgModule({
   declarations: [
@@ -23,14 +26,16 @@ import { HeaderComponent } from './header/header.component';
     AllStudentsComponent,
     SignUpComponent,
     SignInComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddEditStudentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ChartsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+
   ],
   providers: [
     DetailServiceService,
