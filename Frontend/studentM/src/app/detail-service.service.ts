@@ -1,3 +1,4 @@
+import { ResponseModel } from './models/response-model';
 import { Mark } from './models/mark';
 import { StudentMarkView } from './models/student_mark_view';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -18,8 +19,6 @@ export class DetailServiceService {
   ) { }
   
   // getStudents(){
-  //   //console.log(this.http.get(this.studentUrl+'/StudentDetail'))
-  //   // console.log("this.http.get<Student[]>(this.studentUrl+'/StudentDetail')")
   //   // return this.http.get(this.studentUrl+'/StudentDetail')
   //   // .toPromise()
   //   // .then(res => this.list = res as Student[]);
@@ -29,8 +28,6 @@ export class DetailServiceService {
   // }
 
   // getStudents(): Observable<Student[]>{
-  //   //console.log(this.http.get(this.studentUrl+'/StudentDetail'))
-  //   // console.log("this.http.get<Student[]>(this.studentUrl+'/StudentDetail')")
   //   // return this.http.get(this.studentUrl+'/StudentDetail')
   //   // .toPromise()
   //   // .then(res => this.list = res as Student[]);
@@ -47,12 +44,7 @@ export class DetailServiceService {
   }
 
   getDetail(sId: string): Observable<Student>{
-    // console.log(this.studentUrl+'/StudentDetail/'+sId)
-    console.log('ok')
-    console.log(sId)
-
     return this.http.get<Student>(this.studentUrl+'/StudentDetails/GetStudentDetail/'+sId);
-
   }
 
   getMark(sId: string): Observable<Mark[]>{
@@ -61,8 +53,8 @@ export class DetailServiceService {
 
   }
 
-  conertToCSV(student: Student): Observable<string> {
-    return this.http.post<string>(this.studentUrl + '/StudentDetails/ConertToCSV', student);
+  conertToCSV(student: Student): Observable<ResponseModel> {
+    return this.http.post<ResponseModel>(this.studentUrl + '/StudentDetails/ConertToCSV', student);
 
   }
 

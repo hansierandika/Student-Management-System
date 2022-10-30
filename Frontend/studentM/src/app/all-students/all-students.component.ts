@@ -33,7 +33,6 @@ export class AllStudentsComponent implements OnInit {
   // );
 
   getDetail(){
-    console.log(this.students);
     // this.barChartData = [
     //   { data: [this.sdata.maths, this.sdata.sinhala, this.sdata.english, 0], label: 'Marks Chart' },
     // ];

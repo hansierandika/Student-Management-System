@@ -1,3 +1,4 @@
+import { ResponseModel } from './../models/response-model';
 import { Mark } from './../models/mark';
 import { StudentMarkView } from './../models/student_mark_view';
 import { student } from './../models/studentData';
@@ -7,6 +8,7 @@ import { DetailServiceService } from '../detail-service.service';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
 import { Student } from './../models/student';
+import { NotifierService } from 'angular-notifier';
 
 @Component({
   selector: 'app-student-detail',
@@ -15,12 +17,14 @@ import { Student } from './../models/student';
 })
 export class StudentDetailComponent implements OnInit {
 
+  private readonly notifier: NotifierService;
+
   id: string;
   data: any;
-  public student : Student;
-  x=56;
-  public mark : Mark[];
-  message:string=""
+  public student: Student;
+  x = 56;
+  public mark: Mark[];
+  message: string = ""
   public barChartOptions: ChartOptions = {
     responsive: true,
   };
@@ -29,22 +33,24 @@ export class StudentDetailComponent implements OnInit {
   public barChartLegend = true;
   public barChartPlugins = [];
 
-  
+
 
   constructor(private route: ActivatedRoute,
-    private detailService: DetailServiceService) { }
-
-  ngOnInit(): void {
-    this.route.params.subscribe( params =>
-      this.id = params['id']
-      
-  )
-  this.getDetail();
-  
+    private detailService: DetailServiceService,
+    notifierService: NotifierService) {
+    this.notifier = notifierService;
   }
 
-  getDetail(){
-    console.log(this.id)
+  ngOnInit(): void {
+    this.route.params.subscribe(params =>
+      this.id = params['id']
+
+    )
+    this.getDetail();
+
+  }
+
+  getDetail() {
     this.detailService.getDetail(this.id).subscribe(student => this.student = student);
     // this.detailService.getMark(this.id).subscribe(mark => this.mark = mark);
     // console.warn(this.mark)
@@ -55,7 +61,7 @@ export class StudentDetailComponent implements OnInit {
     // this.barChartData = [
     //   { data: [56, this.sdata.sinhala, this.sdata.english, 0], label: 'Marks Chart' },
     // ];
-    }
+  }
 
   //   this.detailService.getDetail(this.id).subscribe(student => this.sdata = student);
   //   //console.log(this.detailService.getDetail(this.id).subscribe(student => this.sdata = student))
@@ -65,15 +71,21 @@ export class StudentDetailComponent implements OnInit {
   //   ];
   // }
 
-  public barChartData: ChartDataSets[] ;
+  public barChartData: ChartDataSets[];
 
-  conertToCSV(studentDetails : Student){
+  conertToCSV(studentDetails: Student) {
     this.detailService.conertToCSV(studentDetails).subscribe(
-      (message) => (this.message = message,
-        alert(this.message)
-        )
-      
 
-    );
+      (data: ResponseModel) => {
+        this.message = data.message
+        if (data.response === 'success') {
+          this.notifier.notify('success', this.message)
+        }else{
+          this.notifier.notify('error', this.message)
+        }
+
+
+      }
+    )
   }
 }

@@ -16,6 +16,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { HeaderComponent } from './header/header.component';
 import { AddEditStudentComponent } from './add-edit-student/add-edit-student.component';
+import { NotifierModule } from 'angular-notifier';
 
 
 @NgModule({
@@ -35,7 +36,23 @@ import { AddEditStudentComponent } from './add-edit-student/add-edit-student.com
     ChartsModule,
     HttpClientModule,
     FormsModule,
-
+    NotifierModule.withConfig({
+      position: {
+        horizontal: {
+          position: "right",
+          distance: 12
+        },
+        vertical: {
+          position: "bottom",
+          distance: 12,
+          gap: 10
+        }
+      },
+      behaviour: {
+        autoHide: 5000
+      },
+      theme: "material"
+    })
   ],
   providers: [
     DetailServiceService,

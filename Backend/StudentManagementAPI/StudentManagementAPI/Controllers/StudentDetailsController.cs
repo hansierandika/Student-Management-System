@@ -198,19 +198,16 @@ namespace StudentManagementAPI.Controllers
             {
                 File.AppendAllText(file, output.ToString());
                 message=studentDetail.RegistrationNo + ".csv Successfully downloaded to download folder";
+                return Ok(new { message = message, response="success" });
             }
 
             catch (Exception ex)
             {
-                Console.WriteLine("Data could not be written to the CSV file.");
                 message="Data could not be written to the CSV file.";
-
+                return Ok(new { message = message, response = "fail" });
             }
 
-            return Ok(message);
-
-
-
+            
         }
 
 private static Guid FolderDownloads = new Guid("374DE290-123F-4565-9164-39C4925E467B");
