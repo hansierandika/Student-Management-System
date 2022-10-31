@@ -15,10 +15,12 @@ export class AllStudentsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, 
     private router:Router,
-    private detailService: DetailServiceService) { }
+    private detailService: DetailServiceService) {
+      this.detailService.getStudents().subscribe((students: Student[]) => this.students = students);
+    
+     }
 
   ngOnInit(): void {
-    this.detailService.getStudents().subscribe((students: Student[]) => this.students = students);
     this.getDetail()
   }
 

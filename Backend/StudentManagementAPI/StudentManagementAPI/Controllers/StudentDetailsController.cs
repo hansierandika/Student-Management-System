@@ -30,7 +30,7 @@ namespace StudentManagementAPI.Controllers
 {
     public class StudentDetailsController : ApiController
     {
-        private StudentManagement_DBEntities db = new StudentManagement_DBEntities();
+        private StudentManagementEntities db = new StudentManagementEntities();
 
         // GET: api/StudentDetails
         [HttpGet]
@@ -38,7 +38,7 @@ namespace StudentManagementAPI.Controllers
         public HttpResponseMessage GetStudentDetails()
         {
             var output = new List<StudentDetail>();
-            output = db.StudentDetails.ToList();
+            output = db.StudentDetails.OrderBy(o => o.StudentId).ToList();
 
             return Request.CreateResponse(HttpStatusCode.OK, output);
         }
@@ -92,33 +92,56 @@ namespace StudentManagementAPI.Controllers
         }
 
         // POST: api/StudentDetails
+        [ActionName("addStudent")]
+        [HttpPost]
         [ResponseType(typeof(StudentDetail))]
         public IHttpActionResult PostStudentDetail(StudentDetail studentDetail)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return BadRequest(ModelState);
-            }
-
-            db.StudentDetails.Add(studentDetail);
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                if (StudentDetailExists(studentDetail.StudentId))
+                var studentList = db.StudentDetails.ToList();
+                int studentID = 0;
+                string studentNo = "";
+                if (studentList.Count() > 0)
                 {
-                    return Conflict();
+                    studentID = db.StudentDetails.OrderByDescending(order => order.StudentId).First().StudentId;
+                    studentID =studentID + 1;
                 }
                 else
                 {
-                    throw;
+                    studentID = 1;
                 }
-            }
 
-            return CreatedAtRoute("DefaultApi", new { id = studentDetail.StudentId }, studentDetail);
+                int characterCount = studentID.ToString().Length;
+                switch (characterCount)
+                {
+                    case 1:
+                        studentNo = "000" + studentID;
+                        break;
+                    case 2:
+                        studentNo = "00" + studentID;
+                        break;
+                    case 3:
+                        studentNo = "0" + studentID;
+                        break;
+                    default:
+                        studentNo = studentID.ToString();
+                        break;
+                }
+                studentDetail.RegistrationNo = "SN" + studentNo;
+                //studentDetail.StudentId = studentID;
+
+
+                db.StudentDetails.Add(studentDetail);
+
+                db.SaveChanges();
+
+                return Ok(new { message = "Student " + studentNo + " added Successfully", response = "success" }); 
+            }
+            else {
+                return BadRequest(ModelState);
+            }
+            //return CreatedAtRoute("DefaultApi", new { id = studentDetail.StudentId }, studentDetail);
         }
 
         // DELETE: api/StudentDetails/5

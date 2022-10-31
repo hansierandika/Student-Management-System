@@ -35,6 +35,11 @@ export class DetailServiceService {
   //   return this.http.get<Student[]>(this.studentUrl+'/StudentDetail').pipe(map(res => <any[]>res));
 
   // }
+
+  addStudent(data: Student): Observable<ResponseModel>{
+    return this.http.post<ResponseModel>(this.studentUrl+'/StudentDetails/addStudent', data);
+  }
+
   getStudentsForMArks(): Observable<StudentMarkView[]> {
     return this.http.get<StudentMarkView[]>(this.studentUrl+'/Marks');
   }

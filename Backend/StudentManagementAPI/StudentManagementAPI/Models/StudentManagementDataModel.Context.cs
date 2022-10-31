@@ -13,10 +13,10 @@ namespace StudentManagementAPI.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class StudentManagement_DBEntities : DbContext
+    public partial class StudentManagementEntities : DbContext
     {
-        public StudentManagement_DBEntities()
-            : base("name=StudentManagement_DBEntities")
+        public StudentManagementEntities()
+            : base("name=StudentManagementEntities")
         {
         }
     

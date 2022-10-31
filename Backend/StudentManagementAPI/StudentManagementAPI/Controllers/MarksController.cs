@@ -14,7 +14,7 @@ namespace StudentManagementAPI.Controllers
 {
     public class MarksController : ApiController
     {
-        private StudentManagement_DBEntities db = new StudentManagement_DBEntities();
+        private StudentManagementEntities db = new StudentManagementEntities();
 
         // GET: api/Marks
         public IQueryable<Mark> GetMarks()

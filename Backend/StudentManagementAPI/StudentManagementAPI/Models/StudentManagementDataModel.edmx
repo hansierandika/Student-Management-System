@@ -4,12 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="StudentManagement_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="StudentManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Mark">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="StudentId" Type="int" />
           <Property Name="SubjectId" Type="int" />
           <Property Name="Grade" Type="int" />
@@ -20,7 +20,7 @@
           <Key>
             <PropertyRef Name="StudentId" />
           </Key>
-          <Property Name="StudentId" Type="int" Nullable="false" />
+          <Property Name="StudentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="RegistrationNo" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="FirstName" Type="nchar" MaxLength="50" />
           <Property Name="LastName" Type="nchar" MaxLength="50" />
@@ -44,7 +44,7 @@
           <Property Name="TeacherName" Type="nchar" MaxLength="50" />
           <Property Name="TeacherCode" Type="nchar" MaxLength="10" />
         </EntityType>
-        <Association Name="FK__Mark__StudentId__2F10007B">
+        <Association Name="FK__Mark__StudentId__31EC6D26">
           <End Role="StudentDetail" Type="Self.StudentDetail" Multiplicity="0..1" />
           <End Role="Mark" Type="Self.Mark" Multiplicity="*" />
           <ReferentialConstraint>
@@ -56,7 +56,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Mark__SubjectId__2E1BDC42">
+        <Association Name="FK__Mark__SubjectId__30F848ED">
           <End Role="Subject" Type="Self.Subject" Multiplicity="0..1" />
           <End Role="Mark" Type="Self.Mark" Multiplicity="*" />
           <ReferentialConstraint>
@@ -68,7 +68,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Subject__Teacher__267ABA7A">
+        <Association Name="FK__Subject__Teacher__2E1BDC42">
           <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
           <End Role="Subject" Type="Self.Subject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -80,20 +80,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="StudentManagement_DBModelStoreContainer">
+        <EntityContainer Name="StudentManagementModelStoreContainer">
           <EntitySet Name="Mark" EntityType="Self.Mark" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StudentDetail" EntityType="Self.StudentDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Subject" EntityType="Self.Subject" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Mark__StudentId__2F10007B" Association="Self.FK__Mark__StudentId__2F10007B">
+          <AssociationSet Name="FK__Mark__StudentId__31EC6D26" Association="Self.FK__Mark__StudentId__31EC6D26">
             <End Role="StudentDetail" EntitySet="StudentDetail" />
             <End Role="Mark" EntitySet="Mark" />
           </AssociationSet>
-          <AssociationSet Name="FK__Mark__SubjectId__2E1BDC42" Association="Self.FK__Mark__SubjectId__2E1BDC42">
+          <AssociationSet Name="FK__Mark__SubjectId__30F848ED" Association="Self.FK__Mark__SubjectId__30F848ED">
             <End Role="Subject" EntitySet="Subject" />
             <End Role="Mark" EntitySet="Mark" />
           </AssociationSet>
-          <AssociationSet Name="FK__Subject__Teacher__267ABA7A" Association="Self.FK__Subject__Teacher__267ABA7A">
+          <AssociationSet Name="FK__Subject__Teacher__2E1BDC42" Association="Self.FK__Subject__Teacher__2E1BDC42">
             <End Role="Teacher" EntitySet="Teacher" />
             <End Role="Subject" EntitySet="Subject" />
           </AssociationSet>
@@ -102,31 +102,31 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="StudentManagement_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="StudentManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Mark">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="StudentId" Type="Int32" />
           <Property Name="SubjectId" Type="Int32" />
           <Property Name="Grade" Type="Int32" />
           <Property Name="Year" Type="Int32" />
           <Property Name="Mark1" Type="Double" />
-          <NavigationProperty Name="StudentDetail" Relationship="Self.FK__Mark__StudentId__2F10007B" FromRole="Mark" ToRole="StudentDetail" />
-          <NavigationProperty Name="Subject" Relationship="Self.FK__Mark__SubjectId__2E1BDC42" FromRole="Mark" ToRole="Subject" />
+          <NavigationProperty Name="StudentDetail" Relationship="Self.FK__Mark__StudentId__31EC6D26" FromRole="Mark" ToRole="StudentDetail" />
+          <NavigationProperty Name="Subject" Relationship="Self.FK__Mark__SubjectId__30F848ED" FromRole="Mark" ToRole="Subject" />
         </EntityType>
         <EntityType Name="StudentDetail">
           <Key>
             <PropertyRef Name="StudentId" />
           </Key>
-          <Property Name="StudentId" Type="Int32" Nullable="false" />
+          <Property Name="StudentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="RegistrationNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="Age" Type="Int32" />
           <Property Name="ContactNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Marks" Relationship="Self.FK__Mark__StudentId__2F10007B" FromRole="StudentDetail" ToRole="Mark" />
+          <NavigationProperty Name="Marks" Relationship="Self.FK__Mark__StudentId__31EC6D26" FromRole="StudentDetail" ToRole="Mark" />
         </EntityType>
         <EntityType Name="Subject">
           <Key>
@@ -136,8 +136,8 @@
           <Property Name="SubjectCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Subject1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="TeacherId" Type="Int32" />
-          <NavigationProperty Name="Marks" Relationship="Self.FK__Mark__SubjectId__2E1BDC42" FromRole="Subject" ToRole="Mark" />
-          <NavigationProperty Name="Teacher" Relationship="Self.FK__Subject__Teacher__267ABA7A" FromRole="Subject" ToRole="Teacher" />
+          <NavigationProperty Name="Marks" Relationship="Self.FK__Mark__SubjectId__30F848ED" FromRole="Subject" ToRole="Mark" />
+          <NavigationProperty Name="Teacher" Relationship="Self.FK__Subject__Teacher__2E1BDC42" FromRole="Subject" ToRole="Teacher" />
         </EntityType>
         <EntityType Name="Teacher">
           <Key>
@@ -146,9 +146,9 @@
           <Property Name="TeacherId" Type="Int32" Nullable="false" />
           <Property Name="TeacherName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="TeacherCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Subjects" Relationship="Self.FK__Subject__Teacher__267ABA7A" FromRole="Teacher" ToRole="Subject" />
+          <NavigationProperty Name="Subjects" Relationship="Self.FK__Subject__Teacher__2E1BDC42" FromRole="Teacher" ToRole="Subject" />
         </EntityType>
-        <Association Name="FK__Mark__StudentId__2F10007B">
+        <Association Name="FK__Mark__StudentId__31EC6D26">
           <End Role="StudentDetail" Type="Self.StudentDetail" Multiplicity="0..1" />
           <End Role="Mark" Type="Self.Mark" Multiplicity="*" />
           <ReferentialConstraint>
@@ -160,7 +160,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Mark__SubjectId__2E1BDC42">
+        <Association Name="FK__Mark__SubjectId__30F848ED">
           <End Role="Subject" Type="Self.Subject" Multiplicity="0..1" />
           <End Role="Mark" Type="Self.Mark" Multiplicity="*" />
           <ReferentialConstraint>
@@ -172,7 +172,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Subject__Teacher__267ABA7A">
+        <Association Name="FK__Subject__Teacher__2E1BDC42">
           <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
           <End Role="Subject" Type="Self.Subject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -184,20 +184,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="StudentManagement_DBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="StudentManagementEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Marks" EntityType="Self.Mark" />
           <EntitySet Name="StudentDetails" EntityType="Self.StudentDetail" />
           <EntitySet Name="Subjects" EntityType="Self.Subject" />
           <EntitySet Name="Teachers" EntityType="Self.Teacher" />
-          <AssociationSet Name="FK__Mark__StudentId__2F10007B" Association="Self.FK__Mark__StudentId__2F10007B">
+          <AssociationSet Name="FK__Mark__StudentId__31EC6D26" Association="Self.FK__Mark__StudentId__31EC6D26">
             <End Role="StudentDetail" EntitySet="StudentDetails" />
             <End Role="Mark" EntitySet="Marks" />
           </AssociationSet>
-          <AssociationSet Name="FK__Mark__SubjectId__2E1BDC42" Association="Self.FK__Mark__SubjectId__2E1BDC42">
+          <AssociationSet Name="FK__Mark__SubjectId__30F848ED" Association="Self.FK__Mark__SubjectId__30F848ED">
             <End Role="Subject" EntitySet="Subjects" />
             <End Role="Mark" EntitySet="Marks" />
           </AssociationSet>
-          <AssociationSet Name="FK__Subject__Teacher__267ABA7A" Association="Self.FK__Subject__Teacher__267ABA7A">
+          <AssociationSet Name="FK__Subject__Teacher__2E1BDC42" Association="Self.FK__Subject__Teacher__2E1BDC42">
             <End Role="Teacher" EntitySet="Teachers" />
             <End Role="Subject" EntitySet="Subjects" />
           </AssociationSet>
@@ -207,9 +207,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="StudentManagement_DBModelStoreContainer" CdmEntityContainer="StudentManagement_DBEntities">
+        <EntityContainerMapping StorageEntityContainer="StudentManagementModelStoreContainer" CdmEntityContainer="StudentManagementEntities">
           <EntitySetMapping Name="Marks">
-            <EntityTypeMapping TypeName="StudentManagement_DBModel.Mark">
+            <EntityTypeMapping TypeName="StudentManagementModel.Mark">
               <MappingFragment StoreEntitySet="Mark">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="StudentId" ColumnName="StudentId" />
@@ -221,7 +221,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="StudentDetails">
-            <EntityTypeMapping TypeName="StudentManagement_DBModel.StudentDetail">
+            <EntityTypeMapping TypeName="StudentManagementModel.StudentDetail">
               <MappingFragment StoreEntitySet="StudentDetail">
                 <ScalarProperty Name="StudentId" ColumnName="StudentId" />
                 <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
@@ -233,7 +233,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Subjects">
-            <EntityTypeMapping TypeName="StudentManagement_DBModel.Subject">
+            <EntityTypeMapping TypeName="StudentManagementModel.Subject">
               <MappingFragment StoreEntitySet="Subject">
                 <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
                 <ScalarProperty Name="SubjectCode" ColumnName="SubjectCode" />
@@ -243,7 +243,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Teachers">
-            <EntityTypeMapping TypeName="StudentManagement_DBModel.Teacher">
+            <EntityTypeMapping TypeName="StudentManagementModel.Teacher">
               <MappingFragment StoreEntitySet="Teacher">
                 <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
                 <ScalarProperty Name="TeacherName" ColumnName="TeacherName" />
