@@ -1,3 +1,4 @@
+import { AddEditMarkComponent } from './add-edit-mark/add-edit-mark.component';
 import { AddEditStudentComponent } from './add-edit-student/add-edit-student.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent },
   { path: 'student-detail/:id', component: StudentDetailComponent },
   { path: 'students-marks', component: StudentsMarksComponent },
-  { path: 'students-add', component: AddEditStudentComponent }
+  { path: 'students-add', component: AddEditStudentComponent },
+  { path: 'mark-add', component: AddEditMarkComponent }
 ];
 
 @NgModule({

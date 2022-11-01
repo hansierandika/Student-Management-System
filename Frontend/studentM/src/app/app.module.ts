@@ -17,6 +17,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { HeaderComponent } from './header/header.component';
 import { AddEditStudentComponent } from './add-edit-student/add-edit-student.component';
 import { NotifierModule } from 'angular-notifier';
+import { AddEditMarkComponent } from './add-edit-mark/add-edit-mark.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { NotifierModule } from 'angular-notifier';
     SignUpComponent,
     SignInComponent,
     HeaderComponent,
-    AddEditStudentComponent
+    AddEditStudentComponent,
+    AddEditMarkComponent
   ],
   imports: [
     BrowserModule,
