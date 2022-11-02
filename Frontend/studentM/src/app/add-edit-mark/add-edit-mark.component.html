@@ -1,11 +1,53 @@
-<div>
-    <table>
-        <tr>
-            <th>Student Reg No</th>
-            <th>Maths</th>
-            <th>English</th>
-            <th>Sinhala</th>
-            <th>Action</th>
-        </tr>
-    </table>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label class="textfield-label" for="firstName">First Name</label>
+                <input type="text" list="students" [(ngModel)]="studentNo"
+                    class="textfield form-control"
+                    (change)="loadStudentNo($event)">
+                <datalist id="students" *ngIf="students">
+                    <option *ngFor="let c of students"
+                        [value]="c.RegistrationNo">{{c.RegistrationNo}}</option>
+                </datalist>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label class="textfield-label" for="Maths">Maths Mark</label>
+                <input class="textfield" type="number" [(ngModel)]="mark.Maths"
+                    name="Maths" class="form-control">
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label class="textfield-label" for="English">English Mark</label>
+                <input class="textfield" type="number" [(ngModel)]="mark.English"
+                    name="English" class="form-control">
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label class="textfield-label" for="Sinhala">Sinhala Mark</label>
+                <input class="textfield" type="number" [(ngModel)]="mark.Sinhala"
+                    name="Sinhala" class="form-control">
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
 </div>
+<div>
+
+
+    <div>
+        <table>
+            <tr>
+                <th>Student Reg No</th>
+                <th>Maths</th>
+                <th>English</th>
+                <th>Sinhala</th>
+                <th>Action</th>
+            </tr>
+        </table>
+    </div>

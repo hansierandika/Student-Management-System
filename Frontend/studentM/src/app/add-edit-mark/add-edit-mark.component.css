@@ -1,0 +1,41 @@
+li{
+    list-style: none !important;
+ 
+}
+ul {
+    list-style: none;
+}
+ul{
+    width: fit-content;
+    position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+  list-style-type: none;
+
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+}
+
+/* option:hover{
+    cursor: pointer;
+    background-color: lightblue;
+} */
+
+li button{
+    width: 100%;
+    border: none;
+    text-align: left;
+    margin: 0;
+    background-color: rgb(243, 246, 247);
+}
+
+input{
+    min-width: 230px;
+}
