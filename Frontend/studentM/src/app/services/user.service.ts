@@ -21,6 +21,10 @@ export class UserService {
 
   }
 
+  getAuthStatus(){
+    return false
+  }
+
   userAuthentication(userName: string, password: string) {
     var data = "username=" + userName + "&password=" + password + "&grant_type=password";
     var reqHeader = new HttpHeaders({ 'Content-Type': 'application/x-www-urlencoded', 'No-Auth': 'True' });

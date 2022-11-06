@@ -19,7 +19,16 @@ export class SignInComponent implements OnInit {
     private userService: UserService,
     private routepath: Router) { }
 
+    userState=''
   ngOnInit(): void {
+  }
+
+  logAsStudent(){
+this.userState='Student'
+  }
+
+  logAsTeacher(){
+this.userState='Teacher'
   }
 
   onSubmit(){

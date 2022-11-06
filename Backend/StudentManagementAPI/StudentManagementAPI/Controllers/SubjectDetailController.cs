@@ -26,7 +26,7 @@ namespace StudentManagementAPI.Controllers
         {
             var output = new List<Subject>();
             output = db.Subjects.ToList();
-            return Request.CreateResponse(HttpStatusCode.OK, output);
+            return Request.CreateResponse(output);
         }
 
         [HttpPost]

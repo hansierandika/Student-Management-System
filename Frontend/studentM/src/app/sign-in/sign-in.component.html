@@ -1,5 +1,14 @@
+<div class="login-entry" *ngIf="userState===''">
+  <img src="../../assets/Images/logo.png" weight="150"
+                        height="150" alt="">
+  <h1>Student Management System</h1>
+  
+  <button (click)="logAsStudent()" class="btn btn-info btn-lg">Log As Student</button>
+  <button (click)="logAsTeacher()" class="btn btn-info btn-lg">Log As Teacher</button>
+</div>
 <div class="container" id="container">
-  <div class="login-form">
+ 
+  <div class="login-form" *ngIf="userState!==''">
     <h1>Sign In</h1>
     <div class="form-group"> <input type="text" class="form-control"
         placeholder="UserName" id="UserName" [(ngModel)]="userName"> <i

@@ -1,23 +1,62 @@
 <h1>Add New Subject</h1>
 <div class="container">
-<form action="">
-    <div class="form-group">
-        <label class="textfield-label" for="Subject1">Subject Name</label>
-        <input class="textfield" type="text" [(ngModel)]="subject.Subject1" name="Subject1" class="form-control">
-    </div>
+    <form action="">
+        <div class="form-group">
+            <label class="textfield-label" for="Subject1">Subject Name</label>
+            <input class="textfield" type="text" [(ngModel)]="subject.Subject1"
+                name="Subject1" class="form-control">
+        </div>
+        <div class="form-group" *ngIf="selectedAction==='edit'">
+            <label class="textfield-label" for="SubjectCode">Subject Code</label>
+            <input class="textfield" type="text" [(ngModel)]="subject.SubjectCode"
+                name="SubjectCode" class="form-control">
+        </div>
 
-    <div class="form-group">
-        <label class="textfield-label" for="IsActive">Active Status</label>
-        <select  [(ngModel)]="subject.IsActive" class="form-control"  name="IsActive">  
-            <option *ngFor="let state of isActive"  [value]="state.id">
-                {{state.name}}
-            </option>
-        </select>  
-    </div>
+        <div class="form-group">
+            <label class="textfield-label" for="IsActive">Active Status</label>
+            <select [(ngModel)]="subject.IsActive" class="form-control"
+                name="IsActive">
+                <option *ngFor="let state of isActive" [value]="state.id">
+                    {{state.name}}
+                </option>
+            </select>
+        </div>
 
-    <div class="form-group">
-        <button class="add-button" (click)="addSubject()">Add Student</button>
+        <div class="form-group">
+            <button class="add-button" (click)="addSubject()">Add Student</button>
+        </div>
+
+    </form>
+
+    <div *ngIf="subject">
+        <div class="card-header" id="card-header">Subject Details</div>
+
+        <div class="card-body">
+            <!-- <h4 class="card-title" id="card-title">Student Information</h4> -->
+            <!-- <h4 class="card-title" id="card-title">Student Marks</h4> -->
+            <table class="table table-hover table-light" id="top-table">
+                <thead>
+                    <tr>
+                        <td>Subject Id</td>
+                        <td>Subject Code</td>
+                        <td>Subject</td>
+                        <td>Active Status</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let subject of subjects">
+                        <td>{{subject.SubjectId}}</td>
+                        <td>{{subject.SubjectCode}}</td>
+                        <td>{{subject.Subject1}}</td>
+                        <td>{{subject.IsActive===1?'Active': 'Inactive'}}</td>
+                        <td>
+                            <button class="add-button" (click)="editSubject(subject)">Edit Student</button>
+                            <button class="add-button" (click)="deleteSubject(subject)">Delete Student</button>
+                        </td>
+                    </tr></tbody>
+            </table>
+
+        </div>
     </div>
-    
-</form>    
 </div>

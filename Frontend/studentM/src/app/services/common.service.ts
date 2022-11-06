@@ -18,4 +18,9 @@ export class CommonService {
 return this.http.post<ResponseModel>(this.studentUrl+'/SubjectDetail/saveSubject',subject)
   }
 
+  getSubjects():Observable<Subject[]>{
+    return this.http.get<Subject[]>(this.studentUrl+'/SubjectDetail/getSubjects');
+
+  }
+
 }
