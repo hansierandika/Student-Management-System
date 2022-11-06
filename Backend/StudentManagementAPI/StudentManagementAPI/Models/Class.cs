@@ -12,25 +12,28 @@ namespace StudentManagementAPI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class StudentDetail
+    public partial class Class
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public StudentDetail()
+        public Class()
         {
-            this.Marks = new HashSet<Mark>();
             this.Class_Student = new HashSet<Class_Student>();
+            this.Marks = new HashSet<Mark>();
         }
     
-        public int StudentId { get; set; }
-        public string RegistrationNo { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public Nullable<int> Age { get; set; }
-        public string ContactNo { get; set; }
+        public int ClassId { get; set; }
+        public string ClassCode { get; set; }
+        public Nullable<int> SubjectId { get; set; }
+        public Nullable<int> TeacherId { get; set; }
+        public Nullable<int> Grade { get; set; }
+        public Nullable<int> Year { get; set; }
+        public Nullable<int> IsActive { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Mark> Marks { get; set; }
+        public virtual Subject Subject { get; set; }
+        public virtual Teacher Teacher { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Class_Student> Class_Student { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Mark> Marks { get; set; }
     }
 }

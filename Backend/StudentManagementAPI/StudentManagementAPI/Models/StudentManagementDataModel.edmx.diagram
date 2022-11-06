@@ -5,13 +5,18 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="e853bc02d4c14e509071f6614fb0ab2a" Name="Diagram1">
-        <EntityTypeShape EntityType="StudentManagementModel.Mark" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentManagementModel.StudentDetail" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudentManagementModel.Subject" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentManagementModel.Teacher" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <AssociationConnector Association="StudentManagementModel.FK__Mark__StudentId__31EC6D26" ManuallyRouted="false" />
-        <AssociationConnector Association="StudentManagementModel.FK__Mark__SubjectId__30F848ED" ManuallyRouted="false" />
-        <AssociationConnector Association="StudentManagementModel.FK__Subject__Teacher__2E1BDC42" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="StudentManagementModel.Class" Width="1.5" PointX="8.25" PointY="0.875" />
+        <EntityTypeShape EntityType="StudentManagementModel.Class_Student" Width="1.5" PointX="10.5" PointY="3.125" />
+        <AssociationConnector Association="StudentManagementModel.FK__Class__TeacherId__4CA06362" />
+        <AssociationConnector Association="StudentManagementModel.FK__Class_Stu__Class__4F7CD00D" />
+        <AssociationConnector Association="StudentManagementModel.FK__Class_Stu__Stude__5070F446" />
+        <EntityTypeShape EntityType="StudentManagementModel.Subject" Width="1.5" PointX="5.375" PointY="5.875" />
+        <AssociationConnector Association="StudentManagementModel.FK__Class__SubjectId__4BAC3F29" />
+        <EntityTypeShape EntityType="StudentManagementModel.Mark" Width="1.5" PointX="10.5" PointY="6" />
+        <AssociationConnector Association="StudentManagementModel.FK__Mark__ClassId__534D60F1" />
+        <AssociationConnector Association="StudentManagementModel.FK__Mark__StudentId__5441852A" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

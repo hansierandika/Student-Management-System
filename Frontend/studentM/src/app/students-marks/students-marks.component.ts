@@ -1,6 +1,6 @@
 import { StudentMarkView } from './../models/student_mark_view';
 import { Component, OnInit } from '@angular/core';
-import { DetailServiceService } from '../detail-service.service';
+import { DetailServiceService } from '../services/detail-service.service';
 import { Student } from '../models/student';
 import { student } from '../models/studentData';
 

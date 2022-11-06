@@ -18,13 +18,17 @@ namespace StudentManagementAPI.Models
         public Teacher()
         {
             this.Subjects = new HashSet<Subject>();
+            this.Classes = new HashSet<Class>();
         }
     
         public int TeacherId { get; set; }
         public string TeacherName { get; set; }
         public string TeacherCode { get; set; }
+        public Nullable<int> IsActive { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Subject> Subjects { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Class> Classes { get; set; }
     }
 }

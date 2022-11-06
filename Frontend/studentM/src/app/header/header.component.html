@@ -5,8 +5,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="all-students">Student Details</a>
-        <a class="nav-item nav-link active" href="students-marks">Student Marks </a>
+        <a class="nav-item nav-link active" [routerLink]="['/dashboard/all-students']" [routerLinkActive]="['active']">Student Details</a>
+        <a class="nav-item nav-link active" [routerLink]="['/dashboard/students-marks']" [routerLinkActive]="['active']">Student Marks </a>
         <!-- <a class="nav-item nav-link" href="#">Features</a> -->
         <a class="nav-item nav-link" href="#">Pricing</a>
         <a class="nav-item nav-link disabled" href="#">Disabled</a>

@@ -25,9 +25,11 @@ namespace StudentManagementAPI.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Mark> Marks { get; set; }
         public virtual DbSet<StudentDetail> StudentDetails { get; set; }
-        public virtual DbSet<Subject> Subjects { get; set; }
         public virtual DbSet<Teacher> Teachers { get; set; }
+        public virtual DbSet<Class> Classes { get; set; }
+        public virtual DbSet<Class_Student> Class_Student { get; set; }
+        public virtual DbSet<Subject> Subjects { get; set; }
+        public virtual DbSet<Mark> Marks { get; set; }
     }
 }

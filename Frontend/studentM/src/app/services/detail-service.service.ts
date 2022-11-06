@@ -1,12 +1,12 @@
-import { ResponseModel } from './models/response-model';
-import { Mark } from './models/mark';
-import { StudentMarkView } from './models/student_mark_view';
+import { ResponseModel } from '../models/response-model';
+import { Mark } from '../models/mark';
+import { StudentMarkView } from '../models/student_mark_view';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Student } from './models/student';
-import { student } from './models/studentData';
+import { Student } from '../models/student';
+import { student } from '../models/studentData';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class DetailServiceService {
   constructor(
     private http: HttpClient
   ) { }
-  
+
   // getStudents(){
   //   // return this.http.get(this.studentUrl+'/StudentDetail')
   //   // .toPromise()
@@ -36,25 +36,25 @@ export class DetailServiceService {
 
   // }
 
-  addStudent(data: Student): Observable<ResponseModel>{
-    return this.http.post<ResponseModel>(this.studentUrl+'/StudentDetails/addStudent', data);
+  addStudent(data: Student): Observable<ResponseModel> {
+    return this.http.post<ResponseModel>(this.studentUrl + '/StudentDetails/addStudent', data);
   }
 
   getStudentsForMArks(): Observable<StudentMarkView[]> {
-    return this.http.get<StudentMarkView[]>(this.studentUrl+'/Marks');
+    return this.http.get<StudentMarkView[]>(this.studentUrl + '/Marks');
   }
 
   getStudents(): Observable<Student[]> {
-    return this.http.get<Student[]>(this.studentUrl+'/StudentDetails/getStudents');
+    return this.http.get<Student[]>(this.studentUrl + '/StudentDetails/getStudents');
   }
 
-  getDetail(sId: string): Observable<Student>{
-    return this.http.get<Student>(this.studentUrl+'/StudentDetails/GetStudentDetail/'+sId);
+  getDetail(sId: string): Observable<Student> {
+    return this.http.get<Student>(this.studentUrl + '/StudentDetails/GetStudentDetail/' + sId);
   }
 
-  getMark(sId: string): Observable<Mark[]>{
-    
-    return this.http.get<Mark[]>(this.studentUrl+'/StudentDetail'+'/GetMark/'+sId);
+  getMark(sId: string): Observable<Mark[]> {
+
+    return this.http.get<Mark[]>(this.studentUrl + '/StudentDetail' + '/GetMark/' + sId);
 
   }
 

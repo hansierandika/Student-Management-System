@@ -1,0 +1,23 @@
+<h1>Add New Subject</h1>
+<div class="container">
+<form action="">
+    <div class="form-group">
+        <label class="textfield-label" for="Subject1">Subject Name</label>
+        <input class="textfield" type="text" [(ngModel)]="subject.Subject1" name="Subject1" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label class="textfield-label" for="IsActive">Active Status</label>
+        <select  [(ngModel)]="subject.IsActive" class="form-control"  name="IsActive">  
+            <option *ngFor="let state of isActive"  [value]="state.id">
+                {{state.name}}
+            </option>
+        </select>  
+    </div>
+
+    <div class="form-group">
+        <button class="add-button" (click)="addSubject()">Add Student</button>
+    </div>
+    
+</form>    
+</div>

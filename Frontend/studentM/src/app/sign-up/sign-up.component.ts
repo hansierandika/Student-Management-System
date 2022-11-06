@@ -1,7 +1,7 @@
+import { UserService } from './../services/user.service';
 import { ActivatedRoute } from '@angular/router';
-import { UserService } from './../user.service';
-import { Student } from './../models/student';
 import { Component, OnInit } from '@angular/core';
+import { Student } from '../models/student';
 
 @Component({
   selector: 'app-sign-up',
@@ -18,7 +18,7 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {
   }
   submit(){
-    this.userService.registerUser(this.user).subscribe();
+    // this.userService.registerUser(this.user).subscribe();
   }
 
 }

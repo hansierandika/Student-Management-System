@@ -1,6 +1,6 @@
 import { Mark } from './../models/mark';
 import { student } from './../models/studentData';
-import { DetailServiceService } from './../detail-service.service';
+import { DetailServiceService } from '../services/detail-service.service';
 import { Student } from './../models/student';
 import { Component, OnInit } from '@angular/core';
 

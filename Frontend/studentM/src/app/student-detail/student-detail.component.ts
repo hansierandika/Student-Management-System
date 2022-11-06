@@ -4,7 +4,7 @@ import { StudentMarkView } from './../models/student_mark_view';
 import { student } from './../models/studentData';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DetailServiceService } from '../detail-service.service';
+import { DetailServiceService } from '../services/detail-service.service';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
 import { Student } from './../models/student';

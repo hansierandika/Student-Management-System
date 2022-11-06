@@ -2,7 +2,7 @@
     <!-- <button class="btn btn-success btn-sm" id="top-button" [routerLink]="['/students-marks']">Marks</button> -->
 
     <div>
-        <a class="add-student" [routerLink]="['/students-add']">Add new student</a>
+        <a class="add-student" [routerLink]="['/dashboard/students-add']">Add new student</a>
     </div>
     <div class="card-header" id="card-header">Student Details</div>
 
@@ -20,7 +20,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr [routerLink]="['/student-detail', st.RegistrationNo]" *ngFor="let st of
+                <tr [routerLink]="['/dashboard/student-detail', st.RegistrationNo]" *ngFor="let st of
                     students">
                     <td>{{st.RegistrationNo}}</td>
                     <td>{{st.FirstName + ' ' + st.LastName}}</td>

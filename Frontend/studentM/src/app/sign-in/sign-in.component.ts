@@ -1,4 +1,4 @@
-import { UserService } from './../user.service';
+import { UserService } from './../services/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Student } from './../models/student';
 import { Component, OnInit } from '@angular/core';

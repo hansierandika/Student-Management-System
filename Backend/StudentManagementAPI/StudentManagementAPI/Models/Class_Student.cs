@@ -12,18 +12,14 @@ namespace StudentManagementAPI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Mark
+    public partial class Class_Student
     {
-        public int Id { get; set; }
+        public int ClassStudentId { get; set; }
+        public int ClassId { get; set; }
         public Nullable<int> StudentId { get; set; }
-        public Nullable<int> SubjectId { get; set; }
-        public Nullable<int> Grade { get; set; }
-        public Nullable<int> Year { get; set; }
-        public Nullable<double> Mark1 { get; set; }
-        public Nullable<int> ClassId { get; set; }
+        public Nullable<int> IsActive { get; set; }
     
-        public virtual StudentDetail StudentDetail { get; set; }
-        public virtual Subject Subject { get; set; }
         public virtual Class Class { get; set; }
+        public virtual StudentDetail StudentDetail { get; set; }
     }
 }

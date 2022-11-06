@@ -1,4 +1,6 @@
-﻿using System;
+﻿//using System.Web.Mvc;
+using StudentManagementAPI.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -7,24 +9,13 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Web.Http;
 using System.Web.Http.Description;
-using System.Web.Http.Results;
-using System.Web.Mvc;
-using CsvHelper;
-//using System.Web.Mvc;
-using StudentManagementAPI.Models;
 using ActionNameAttribute = System.Web.Http.ActionNameAttribute;
 using HttpGetAttribute = System.Web.Http.HttpGetAttribute;
 using HttpPostAttribute = System.Web.Http.HttpPostAttribute;
-using RouteAttribute = System.Web.Http.RouteAttribute;
-using System.Data;
-using System.Configuration;
-using System.Data.SqlClient;
-using System.Web;
-using static System.Net.Mime.MediaTypeNames;
-using System.Runtime.InteropServices;
 
 namespace StudentManagementAPI.Controllers
 {
@@ -112,22 +103,7 @@ namespace StudentManagementAPI.Controllers
                     studentID = 1;
                 }
 
-                int characterCount = studentID.ToString().Length;
-                switch (characterCount)
-                {
-                    case 1:
-                        studentNo = "000" + studentID;
-                        break;
-                    case 2:
-                        studentNo = "00" + studentID;
-                        break;
-                    case 3:
-                        studentNo = "0" + studentID;
-                        break;
-                    default:
-                        studentNo = studentID.ToString();
-                        break;
-                }
+                
                 studentDetail.RegistrationNo = "SN" + studentNo;
                 //studentDetail.StudentId = studentID;
 

@@ -1,0 +1,20 @@
+
+  .header{
+    margin-left: 0;
+    width: 100%;
+  }
+ 
+  .navbar{
+    /* width: 10%; */
+    position: absolute;
+top: 0;
+bottom: 0;
+    /* z-index: 1; */
+    /* background-color: aliceblue; */
+  }
+
+
+  .padding-0{
+    padding-right:0;
+    padding-left:0;
+}
