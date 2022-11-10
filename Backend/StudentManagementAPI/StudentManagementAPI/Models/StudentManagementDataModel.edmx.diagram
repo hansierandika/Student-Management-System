@@ -17,6 +17,7 @@
         <EntityTypeShape EntityType="StudentManagementModel.Mark" Width="1.5" PointX="10.5" PointY="6" />
         <AssociationConnector Association="StudentManagementModel.FK__Mark__ClassId__534D60F1" />
         <AssociationConnector Association="StudentManagementModel.FK__Mark__StudentId__5441852A" />
+        <EntityTypeShape EntityType="StudentManagementModel.User" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -31,5 +31,6 @@ namespace StudentManagementAPI.Models
         public virtual DbSet<Class_Student> Class_Student { get; set; }
         public virtual DbSet<Subject> Subjects { get; set; }
         public virtual DbSet<Mark> Marks { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }

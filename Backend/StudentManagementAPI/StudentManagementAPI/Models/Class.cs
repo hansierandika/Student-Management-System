@@ -29,10 +29,10 @@ namespace StudentManagementAPI.Models
         public Nullable<int> Year { get; set; }
         public Nullable<int> IsActive { get; set; }
     
-        public virtual Subject Subject { get; set; }
         public virtual Teacher Teacher { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Class_Student> Class_Student { get; set; }
+        public virtual Subject Subject { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Mark> Marks { get; set; }
     }

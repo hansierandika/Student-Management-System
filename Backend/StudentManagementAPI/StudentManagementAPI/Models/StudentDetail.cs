@@ -17,8 +17,8 @@ namespace StudentManagementAPI.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public StudentDetail()
         {
-            this.Marks = new HashSet<Mark>();
             this.Class_Student = new HashSet<Class_Student>();
+            this.Marks = new HashSet<Mark>();
         }
     
         public int StudentId { get; set; }
@@ -29,8 +29,8 @@ namespace StudentManagementAPI.Models
         public string ContactNo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Mark> Marks { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Class_Student> Class_Student { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Mark> Marks { get; set; }
     }
 }

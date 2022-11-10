@@ -176,6 +176,7 @@
     <Compile Include="Controllers\MarksController.cs" />
     <Compile Include="Controllers\StudentDetailsController.cs" />
     <Compile Include="Controllers\SubjectDetailController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -212,6 +213,9 @@
       <DependentUpon>StudentManagementDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Teacher.cs">
+      <DependentUpon>StudentManagementDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
       <DependentUpon>StudentManagementDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -291,6 +295,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\SubjectDetail\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

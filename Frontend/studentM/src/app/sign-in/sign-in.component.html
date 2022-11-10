@@ -1,14 +1,26 @@
 <div class="login-entry" *ngIf="userState===''">
   <img src="../../assets/Images/logo.png" weight="150"
-                        height="150" alt="">
+    height="150" alt="">
   <h1>Student Management System</h1>
-  
+
   <button (click)="logAsStudent()" class="btn btn-info btn-lg">Log As Student</button>
   <button (click)="logAsTeacher()" class="btn btn-info btn-lg">Log As Teacher</button>
+  <div class="signupPhase">
+    <span>
+      If new student <a [routerLink]="['/sign-up']">Sign up</a>
+    </span>
+  </div>
 </div>
+
 <div class="container" id="container">
- 
+
   <div class="login-form" *ngIf="userState!==''">
+    <input type="button" value="Back" (click)="removeUserRole()">
+    <div class="signupPhase" *ngIf="userState=='Student'">
+      <span>
+        If new student <a [routerLink]="['/sign-up']">Sign up</a>
+      </span>
+    </div>
     <h1>Sign In</h1>
     <div class="form-group"> <input type="text" class="form-control"
         placeholder="UserName" id="UserName" [(ngModel)]="userName"> <i
@@ -19,10 +31,13 @@
         class="form-control" placeholder="Password" id="Passwod"
         [(ngModel)]="password"> <i class="mdi mdi-lock"></i> </div> <span
       class="alert">Invalid Credentials</span> <a class="link" href="#">Lost
-      your password?</a> <button type="button" class="log-btn" (click)="onSubmit()"><i class="mdi
+      your password?</a> <button type="button" class="log-btn"
+      (click)="onSubmit()"><i class="mdi
         mdi-account"></i> Log in</button>
   </div>
-  <!-- <div class="form-group">
+</div>
+
+<!-- <div class="form-group">
         <fieldset disabled="">
           <label class="form-label" for="disabledInput">Disabled input</label>
           <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">
@@ -89,4 +104,3 @@
           <label for="floatingPassword">Password</label>
         </div>
       </div> -->
-</div>

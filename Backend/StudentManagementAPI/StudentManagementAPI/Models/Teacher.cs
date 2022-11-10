@@ -17,7 +17,6 @@ namespace StudentManagementAPI.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Teacher()
         {
-            this.Subjects = new HashSet<Subject>();
             this.Classes = new HashSet<Class>();
         }
     
@@ -26,8 +25,6 @@ namespace StudentManagementAPI.Models
         public string TeacherCode { get; set; }
         public Nullable<int> IsActive { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Subject> Subjects { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Class> Classes { get; set; }
     }

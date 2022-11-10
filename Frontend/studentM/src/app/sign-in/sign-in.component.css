@@ -21,3 +21,16 @@
 .login-entry button{
     margin: 10px;
 }
+
+.signupPhase{
+    text-align: center;
+    color: rgb(23, 2, 2);
+    font-size: 24px;
+    /* width: 100%; */
+}
+
+.signupPhase a{
+    color: rgb(23, 2, 2);
+    font-weight: bolder;
+
+}

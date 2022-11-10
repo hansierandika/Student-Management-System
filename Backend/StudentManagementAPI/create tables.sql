@@ -66,5 +66,22 @@ CREATE TABLE [dbo].[Mark] (
     FOREIGN KEY ([StudentId]) REFERENCES [dbo].[StudentDetail] ([StudentId])
 );
 
+
+CREATE TABLE [dbo].[User] (
+    [Id]   INT        IDENTITY (1, 1) NOT NULL,
+    [FirstName] NCHAR (50)    NULL,
+    [LastName] NCHAR (50)    NULL,
+    [UserName] NCHAR (50)  Not  NULL,
+    [Role] NCHAR (10)    NULL,
+    [Email]     NCHAR (50)    NULL,
+    [Password]      NCHAR (150)    NULL,
+    [NewPassword]      NCHAR (150)    NULL,
+    [EntryDate]      Date    NULL,
+    [UpdateDate]      Date    NULL,
+    [IsActive]  INT        NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
 --Add new column to Teachers table
 Alter TABLE dbo.Teacher Add IsActive int 

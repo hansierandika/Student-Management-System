@@ -65,6 +65,22 @@
           <Property Name="TeacherCode" Type="nchar" MaxLength="10" />
           <Property Name="IsActive" Type="int" />
         </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nchar" MaxLength="50" />
+          <Property Name="LastName" Type="nchar" MaxLength="50" />
+          <Property Name="Role" Type="nchar" MaxLength="10" />
+          <Property Name="Email" Type="nchar" MaxLength="50" />
+          <Property Name="Password" Type="nchar" MaxLength="150" />
+          <Property Name="NewPassword" Type="nchar" MaxLength="150" />
+          <Property Name="EntryDate" Type="date" />
+          <Property Name="UpdateDate" Type="date" />
+          <Property Name="IsActive" Type="int" />
+          <Property Name="UserName" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <Association Name="FK__Class__SubjectId__4BAC3F29">
           <End Role="Subject" Type="Self.Subject" Multiplicity="0..1" />
           <End Role="Class" Type="Self.Class" Multiplicity="*" />
@@ -144,6 +160,7 @@
           <EntitySet Name="StudentDetail" EntityType="Self.StudentDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Subject" EntityType="Self.Subject" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Class__SubjectId__4BAC3F29" Association="Self.FK__Class__SubjectId__4BAC3F29">
             <End Role="Subject" EntitySet="Subject" />
             <End Role="Class" EntitySet="Class" />
@@ -227,6 +244,7 @@
             <End Role="StudentDetail" EntitySet="StudentDetails" />
             <End Role="Mark" EntitySet="Marks" />
           </AssociationSet>
+          <EntitySet Name="Users" EntityType="StudentManagementModel.User" />
         </EntityContainer>
         <EntityType Name="Class">
           <Key>
@@ -349,6 +367,22 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Role" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+          <Property Name="NewPassword" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+          <Property Name="EntryDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+          <Property Name="IsActive" Type="Int32" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -417,6 +451,23 @@
                 <ScalarProperty Name="Grade" ColumnName="Grade" />
                 <ScalarProperty Name="ClassId" ColumnName="ClassId" />
                 <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="StudentManagementModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="NewPassword" ColumnName="NewPassword" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

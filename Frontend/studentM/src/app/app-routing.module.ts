@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'mark-add', component: AddEditMarkComponent, canActivate: [AuthGuard] }
 ]},
 
-{ path: 'sign-up', component: SignUpComponent, canActivate: [AuthGuard] },
+{ path: 'sign-up', component: SignUpComponent },
 
 
 ];

@@ -1,3 +1,4 @@
+import { User } from './../models/user.model';
 import { UserService } from './../services/user.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -10,7 +11,7 @@ import { Student } from '../models/student';
 })
 export class SignUpComponent implements OnInit {
 
-  user= new Student();
+  user= new User();
 
   constructor(private route: ActivatedRoute, 
     private userService: UserService) { }
@@ -18,7 +19,12 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {
   }
   submit(){
-    // this.userService.registerUser(this.user).subscribe();
+    this.user.Role='Student'
+    this.userService.registerUser(this.user).subscribe(
+    (data)=>{
+      console.log(data)
+    }
+    );
   }
 
 }
